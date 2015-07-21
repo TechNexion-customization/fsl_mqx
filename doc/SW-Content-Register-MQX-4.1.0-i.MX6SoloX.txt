@@ -1,0 +1,50 @@
+Release Name: MQX RTOS for i.MX 6SoloX
+Version: 4.1.0-ga
+Filename: Freescale_MQX_4_1_IMX6SX.exe
+
+List of components:
+DOM4J            
+                          Description: XML parser for CW extension
+                          Version: 1.6.1
+                          Author:  MetaStuff
+                          License: Open Source: Proprietary (BSD 2.0+ like) 
+                          Format: jar
+                          URL: http://dom4j.sourceforge.net
+                          Location:   
+                          tools/ds5/ds5_update_site.zip/plugins/com.freescale.dom4j
+
+MCC
+                          Description: MCC is a subsystem of MultiCore
+                          Communication, which enables applications to
+                          run on different cores in the multicore
+                          system.
+                          Version: 2
+                          Author:  Freescale
+                          License: Open Source: BSD-3-Clause
+                          Format: source code
+                          URL: NA
+                          Location:
+                          mcc/*
+
+eCompass S/W                  
+                          Description: An eCompass implementation with
+                          magnetometer and accelerometer
+                          Version: 3
+                          Author:  Freescale
+                          License: Proprietary.  See the license
+                          file  MQX_RTOS_LICENSE
+                          Format: source code
+                          URL: NA
+                          Location:   
+                          mqx/examples/sensor/e_compass/
+
+Bootstrap
+                          Description: http://getbootstrap.com/
+                          Version: v2.3.2
+                          Author: Bootstrap community
+                          License: Open Source: MIT
+                          Format: source code
+                          URL: http://getbootstrap.com/ 
+                          Location: 
+                          mqx/doc/.doc/css/bootstrap.min.css
+                          mqx/doc/.doc/js/bootstrap-tab.js
