@@ -3,7 +3,7 @@ EXTERN(main __vector_table ram_vector)
 
 MEMORY
 {
-    text        (RX): ORIGIN = 0x78000000, LENGTH = 0x00040000    /* QSPI2 Flash */
+    text        (RX): ORIGIN = 0x70000000, LENGTH = 0x00040000    /* QSPI2 Flash */
     data        (RW): ORIGIN = 0x20000000, LENGTH = 0x00007E00    /* TCMU */
 }
 
