@@ -173,23 +173,23 @@ _mqx_int _bsp_serial_io_init
             /* Enable pin mux */
             if (flags & IO_PERIPHERAL_PIN_MUX_ENABLE)
             {
-                IOMUXC_SW_MUX_CTL_PAD_GPIO1_IO06 = IOMUXC_SW_MUX_CTL_PAD_GPIO1_IO06_MUX_MODE(0);
-                IOMUXC_SW_MUX_CTL_PAD_GPIO1_IO07 = IOMUXC_SW_MUX_CTL_PAD_GPIO1_IO07_MUX_MODE(0);
-                IOMUXC_SW_PAD_CTL_PAD_GPIO1_IO06 = IOMUXC_SW_PAD_CTL_PAD_GPIO1_IO06_PKE_MASK | \
-                                                   IOMUXC_SW_PAD_CTL_PAD_GPIO1_IO06_PUE_MASK | \
-                                                   IOMUXC_SW_PAD_CTL_PAD_GPIO1_IO06_PUS(2)   | \
-                                                   IOMUXC_SW_PAD_CTL_PAD_GPIO1_IO06_SPEED(2) | \
-                                                   IOMUXC_SW_PAD_CTL_PAD_GPIO1_IO06_DSE(6)   | \
-                                                   IOMUXC_SW_PAD_CTL_PAD_GPIO1_IO06_SRE_MASK | \
-                                                   IOMUXC_SW_PAD_CTL_PAD_GPIO1_IO06_HYS_MASK;
-                IOMUXC_SW_PAD_CTL_PAD_GPIO1_IO07 = IOMUXC_SW_PAD_CTL_PAD_GPIO1_IO07_PKE_MASK | \
-                                                   IOMUXC_SW_PAD_CTL_PAD_GPIO1_IO07_PUE_MASK | \
-                                                   IOMUXC_SW_PAD_CTL_PAD_GPIO1_IO07_PUS(2)   | \
-                                                   IOMUXC_SW_PAD_CTL_PAD_GPIO1_IO07_SPEED(2) | \
-                                                   IOMUXC_SW_PAD_CTL_PAD_GPIO1_IO07_DSE(6)   | \
-                                                   IOMUXC_SW_PAD_CTL_PAD_GPIO1_IO07_SRE_MASK | \
-                                                   IOMUXC_SW_PAD_CTL_PAD_GPIO1_IO07_HYS_MASK;
-                IOMUXC_UART2_IPP_UART_RXD_MUX_SELECT_INPUT = 1;
+                IOMUXC_SW_MUX_CTL_PAD_SD1_DATA0 = IOMUXC_SW_MUX_CTL_PAD_SD1_DATA0_MUX_MODE(4);
+                IOMUXC_SW_MUX_CTL_PAD_SD1_DATA1 = IOMUXC_SW_MUX_CTL_PAD_SD1_DATA1_MUX_MODE(4);
+                IOMUXC_SW_PAD_CTL_PAD_SD1_DATA0 = IOMUXC_SW_PAD_CTL_PAD_SD1_DATA0_PKE_MASK | \
+                                                   IOMUXC_SW_PAD_CTL_PAD_SD1_DATA0_PUE_MASK | \
+                                                   IOMUXC_SW_PAD_CTL_PAD_SD1_DATA0_PUS(2)   | \
+                                                   IOMUXC_SW_PAD_CTL_PAD_SD1_DATA0_SPEED(2) | \
+                                                   IOMUXC_SW_PAD_CTL_PAD_SD1_DATA0_DSE(6)   | \
+                                                   IOMUXC_SW_PAD_CTL_PAD_SD1_DATA0_SRE_MASK | \
+                                                   IOMUXC_SW_PAD_CTL_PAD_SD1_DATA0_HYS_MASK;
+                IOMUXC_SW_PAD_CTL_PAD_SD1_DATA1 = IOMUXC_SW_PAD_CTL_PAD_SD1_DATA1_PKE_MASK | \
+                                                   IOMUXC_SW_PAD_CTL_PAD_SD1_DATA1_PUE_MASK | \
+                                                   IOMUXC_SW_PAD_CTL_PAD_SD1_DATA1_PUS(2)   | \
+                                                   IOMUXC_SW_PAD_CTL_PAD_SD1_DATA1_SPEED(2) | \
+                                                   IOMUXC_SW_PAD_CTL_PAD_SD1_DATA1_DSE(6)   | \
+                                                   IOMUXC_SW_PAD_CTL_PAD_SD1_DATA1_SRE_MASK | \
+                                                   IOMUXC_SW_PAD_CTL_PAD_SD1_DATA1_HYS_MASK;
+                IOMUXC_UART2_IPP_UART_RXD_MUX_SELECT_INPUT = 2;
             }
             /* Disable pin mux to the default gpio */
             if (flags & IO_PERIPHERAL_PIN_MUX_DISABLE)
