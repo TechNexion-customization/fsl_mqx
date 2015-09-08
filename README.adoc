@@ -1,0 +1,49 @@
+= Freescale MQX BSP
+
+MQX BSP is provided to the SOC with Cortex-M core.
+
+(e.g. Freescale i.mx6sx has Cortex-A9 and Cortex-M4 cores. Cortex-A9 runs Linux, and Cortex-M4 runs MQX.)
+
+
+*Support platform:* `edm1-cf-imx6sx`
+
+Download and install toolchain to compile MQX:
+[source,console]
+$: wget 'https://launchpad.net/gcc-arm-embedded/4.8/4.8-2014-q1-update/+download/gcc-arm-none-eabi-4_8-2014q1-20140314-linux.tar.bz2'
+$: tar jxvf gcc-arm-none-eabi-4_8-2014q1-20140314-linux.tar.bz2
+
+
+Export the environment of toolchain
+[source,console]
+$: export TOOLCHAIN_ROOTDIR=${absolute_path}/gcc-arm-none-eabi-4_8-2014q1  
+$: export PATH=$PATH:${absolute_path}/gcc-arm-none-eabi-4_8-2014q1/bin
+
+Compile the MQX:
+[source,console]
+$: cd fsl_mqx/build/edm1-cf-imx6sx/make
+$: ./build_gcc_arm.sh
+
+Then, you can start to compile the example you would like to run.
+
+*For example:*
+
+Build the pingpong application:
+[source,console]
+$: cd fsl_mqx/mcc/examples/pingpong/build/make/pingpong_example_edm1-cf-imx6sx/
+$: cd gcc_arm/extflash_release/
+$: arm-none-eabi-objcopy -O binary pingpong_example_imx6sx_sdb_m4.elf m4_qspi.bin
+
+*Run pingpong example on edm1-cf-imx6sx:*
+
+In u-boot prompt:
+[source,console]
+$: run update_m4_from_sd
+$: run m4boot
+$: setenv fdt_file imx6sx-edm1-cf-m4.dtb
+$: setenv mmcargs "${mmcargs} uart_from_osc" 
+$: setenv bootcmd "run m4boot;${bootcmd}" 
+$: boot 
+
+After booting into rootfs:
+[source,console]
+$: echo 1 > /sys/devices/soc0/soc.1/2200000.aips-bus/mcctest.17/pingpong_en &
