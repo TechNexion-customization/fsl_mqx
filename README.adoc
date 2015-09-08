@@ -1,0 +1,8 @@
+= Freescale MQX BSP
+
+MQX BSP is provided to the SOC with Cortex-M core.
+
+(e.g. Freescale i.mx6sx has Cortex-A9 and Cortex-M4 cores. Cortex-A9 runs Linux, and Cortex-M4 runs MQX.)
+
+
+*Support platform:* `edm1-cf-imx6sx`
